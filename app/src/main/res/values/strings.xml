@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright (c) 2022-2023 Universitat Politècnica de València
+  ~ Authors: David de Andrés and Juan Carlos Ruiz
+  ~          Fault-Tolerant Systems
+  ~          Instituto ITACA
+  ~          Universitat Politècnica de València
+  ~
+  ~ Distributed under MIT license
+  ~ (See accompanying file LICENSE.txt)
+  -->
+
+<resources>
+    <string name="app_name">Ex26_SettingsDataStore</string>
+    <!--Strings for the GreetingsFragment-->
+    <string name="image_description">Android icon waving</string>
+    <string name="greetings_fragment">Greetings</string>
+    <string name="greetings_message">Welcome to the app, %1s!</string>
+    <!--Strings for the SettingsFragment-->
+    <string name="settings_fragment">Settings</string>
+    <!--Strings for Preferences-->
+    <string name="username_category">User name configuration</string>
+    <string name="icon_category">Icon configuration</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="username_title">User name</string>
+    <string name="username_hint">Enter your user name</string>
+    <string name="icon_title">Show icon</string>
+    <string name="color_title">Text color</string>
+    <string name="default_color">#FF000000</string>
+    <!--Colors-->
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="magenta">Magenta</string>
+    <string name="cyan">Cyan</string>
+    <string name="white">White</string>
+    <string name="black">Black</string>
+</resources>

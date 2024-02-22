@@ -1,0 +1,33 @@
+<!--
+  ~ Copyright (c) 2022-2023 Universitat Politècnica de València
+  ~ Authors: David de Andrés and Juan Carlos Ruiz
+  ~          Fault-Tolerant Systems
+  ~          Instituto ITACA
+  ~          Universitat Politècnica de València
+  ~
+  ~ Distributed under MIT license
+  ~ (See accompanying file LICENSE.txt)
+  -->
+
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Ex26_SettingsDataStore" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="toolbarStyle">@style/Style.App.Toolbar</item>
+        <item name="appBarLayoutStyle">@style/Style.App.AppBarLayout</item>
+    </style>
+
+    <style name="Style.App.AppBarLayout" parent="@style/Widget.MaterialComponents.AppBarLayout.Primary" />
+
+    <style name="Style.App.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Theme.Ex26_SettingsDataStore" parent="Base.Theme.Ex26_SettingsDataStore" />
+</resources>

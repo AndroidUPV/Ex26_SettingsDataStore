@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022-2023 Universitat Politècnica de València
+  ~ Authors: David de Andrés and Juan Carlos Ruiz
+  ~          Fault-Tolerant Systems
+  ~          Instituto ITACA
+  ~          Universitat Politècnica de València
+  ~
+  ~ Distributed under MIT license
+  ~ (See accompanying file LICENSE.txt)
+  -->
+<!--Displays settings for the Greetings screen-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Preferences related to the user name-->
+    <PreferenceCategory android:title="@string/username_category">
+
+        <!--User name-->
+        <EditTextPreference
+            android:defaultValue="@string/anonymous"
+            android:hint="@string/username_hint"
+            android:key="prefs_username"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/username_title"
+            app:useSimpleSummaryProvider="true" />
+        <!--Text color-->
+        <ListPreference
+            android:defaultValue="@string/default_color"
+            android:entries="@array/colors_name"
+            android:entryValues="@array/colors_value"
+            android:key="prefs_color"
+            android:title="@string/color_title"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <!--Preferences related to the icon-->
+    <PreferenceCategory android:title="@string/icon_category">
+        <!--Icon visibility-->
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="prefs_isIconVisible"
+            android:title="@string/icon_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022-2023 Universitat Politècnica de València
+  ~ Authors: David de Andrés and Juan Carlos Ruiz
+  ~          Fault-Tolerant Systems
+  ~          Instituto ITACA
+  ~          Universitat Politècnica de València
+  ~
+  ~ Distributed under MIT license
+  ~ (See accompanying file LICENSE.txt)
+  -->
+
+<resources>
+    <!--List of colors to display the welcome message-->
+    <string-array name="colors_name">
+        <item>@string/red</item>
+        <item>@string/green</item>
+        <item>@string/blue</item>
+        <item>@string/yellow</item>
+        <item>@string/magenta</item>
+        <item>@string/cyan</item>
+        <item>@string/white</item>
+        <item>@string/black</item>
+    </string-array>
+
+    <!--Value of the previously selected colors-->
+    <string-array name="colors_value">
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FF0000FF</item>
+        <item>#FFFFFF00</item>
+        <item>#FFFF00FF</item>
+        <item>#FF00FFFF</item>
+        <item>#FFFFFFFF</item>
+        <item>#FF000000</item>
+    </string-array>
+</resources>
