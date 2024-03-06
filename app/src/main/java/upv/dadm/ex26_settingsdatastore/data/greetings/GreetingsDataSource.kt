@@ -27,7 +27,7 @@ interface GreetingsDataSource {
     /**
      * Returns the current value of the user name preference.
      */
-    suspend fun getUsernameSnapshot(): String
+    suspend fun getUsernameSnapshot(defaultValue: String): String
 
     /**
      * Returns a Flow for the text color preference.
@@ -37,7 +37,7 @@ interface GreetingsDataSource {
     /**
      * Returns the current value of the text color preference.
      */
-    suspend fun getTextColorSnapshot(): String
+    suspend fun getTextColorSnapshot(defaultValue: String): String
 
     /**
      * Returns a Flow for the icon visibility preference.
@@ -47,7 +47,7 @@ interface GreetingsDataSource {
     /**
      * Returns the current value of the icon visibility preference.
      */
-    suspend fun isIconVisibleSnapshot(): Boolean
+    suspend fun isIconVisibleSnapshot(defaultValue: Boolean): Boolean
 
     /**
      * Returns a Flow for all the preferences.

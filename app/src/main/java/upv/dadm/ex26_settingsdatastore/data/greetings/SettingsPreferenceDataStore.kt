@@ -55,12 +55,12 @@ class SettingsPreferenceDataStore @Inject constructor(
      * Gets the user name or text color from the DataStore.
      */
     override fun getString(key: String?, defValue: String?): String {
-        var result = ""
+        var result: String
         runBlocking(Dispatchers.IO) {
-            when (key) {
-                "prefs_username" -> result = greetingsRepository.getUsernameSnapshot()
-                "prefs_color" -> result = greetingsRepository.getTextColorSnapshot()
-                else -> {}
+            result = when (key) {
+                "prefs_username" -> greetingsRepository.getUsernameSnapshot(defValue ?: "")
+                "prefs_color" -> greetingsRepository.getTextColorSnapshot(defValue ?: "")
+                else -> defValue ?: ""
             }
         }
         return result
@@ -71,11 +71,13 @@ class SettingsPreferenceDataStore @Inject constructor(
      * Gets the icon visibility from the DataStore.
      */
     override fun getBoolean(key: String?, defValue: Boolean): Boolean {
-        var result = false
+        var result: Boolean
         runBlocking(Dispatchers.IO) {
-            when (key) {
-                "prefs_isIconVisible" -> result = greetingsRepository.isIconVisibleSnapshot()
-                else -> {}
+            result = when (key) {
+                "prefs_isIconVisible" ->
+                    greetingsRepository.isIconVisibleSnapshot(defValue)
+
+                else -> defValue
             }
         }
         return result
