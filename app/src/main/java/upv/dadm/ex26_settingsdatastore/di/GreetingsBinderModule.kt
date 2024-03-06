@@ -11,6 +11,7 @@
 
 package upv.dadm.ex26_settingsdatastore.di
 
+import androidx.preference.PreferenceDataStore
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -19,6 +20,7 @@ import upv.dadm.ex26_settingsdatastore.data.greetings.GreetingsDataSource
 import upv.dadm.ex26_settingsdatastore.data.greetings.GreetingsDataSourceImpl
 import upv.dadm.ex26_settingsdatastore.data.greetings.GreetingsRepository
 import upv.dadm.ex26_settingsdatastore.data.greetings.GreetingsRepositoryImpl
+import upv.dadm.ex26_settingsdatastore.data.greetings.SettingsPreferenceDataStore
 import javax.inject.Singleton
 
 /**
@@ -47,4 +49,13 @@ abstract class GreetingsBinderModule {
         greetingsRepositoryImpl: GreetingsRepositoryImpl
     ): GreetingsRepository
 
+    /**
+     * Provides an instance of a PreferenceDataStore.
+     */
+    @Binds
+    // The Singleton annotation ensures that it will only exist a single instance of DataStore<Preferences>
+    @Singleton
+    abstract fun bindSettingsPreferenceDataStore(
+        settingsPreferenceDataStore: SettingsPreferenceDataStore
+    ): PreferenceDataStore
 }

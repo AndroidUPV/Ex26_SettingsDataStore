@@ -12,15 +12,12 @@
 package upv.dadm.ex26_settingsdatastore.di
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStoreFile
-import androidx.preference.PreferenceDataStore
-import androidx.preference.PreferenceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,8 +26,6 @@ import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import upv.dadm.ex26_settingsdatastore.data.greetings.GreetingsRepository
-import upv.dadm.ex26_settingsdatastore.data.greetings.SettingsPreferenceDataStore
 import javax.inject.Singleton
 
 /**
@@ -66,16 +61,5 @@ class GreetingsProviderModule {
             produceFile = { context.preferencesDataStoreFile(Constants.PREFERENCE_FILE) }
         )
     }
-
-    /**
-     * Provides an instance of a PreferenceDataStore.
-     */
-    @Provides
-    // The Singleton annotation ensures that it will only exist a single instance of DataStore<Preferences>
-    @Singleton
-    fun provideSettingsPreferenceDataStore(
-        greetingsRepository: GreetingsRepository
-    ): PreferenceDataStore =
-        SettingsPreferenceDataStore(greetingsRepository)
 
 }
