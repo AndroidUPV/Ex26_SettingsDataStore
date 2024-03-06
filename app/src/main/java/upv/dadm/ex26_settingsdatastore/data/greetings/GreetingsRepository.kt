@@ -55,15 +55,15 @@ interface GreetingsRepository {
     /**
      * Returns the current value of the user name preference.
      */
-    suspend fun getUsernameSnapshot(): String
+    suspend fun getUsernameSnapshot(): String?
 
     /**
      * Returns the current value of the text color preference.
      */
-    suspend fun getTextColorSnapshot(): String
+    suspend fun getTextColorSnapshot(): String?
 
     /**
      * Returns the current value of the icon visibility preference.
      */
-    suspend fun isIconVisibleSnapshot(): Boolean
+    suspend fun isIconVisibleSnapshot(): Boolean?
 }

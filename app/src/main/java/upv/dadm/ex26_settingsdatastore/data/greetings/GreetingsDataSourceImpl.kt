@@ -56,8 +56,8 @@ class GreetingsDataSourceImpl @Inject constructor(
     /**
      * Returns the current value of the user name preference.
      */
-    override suspend fun getUsernameSnapshot(): String =
-        dataStore.data.first()[PreferenceKeys.USER_NAME] ?: ""
+    override suspend fun getUsernameSnapshot(): String? =
+        dataStore.data.first()[PreferenceKeys.USER_NAME]
 
     /**
      * Returns a Flow for the text color preference.
@@ -74,8 +74,8 @@ class GreetingsDataSourceImpl @Inject constructor(
     /**
      * Returns the current value of the text color preference.
      */
-    override suspend fun getTextColorSnapshot(): String =
-        dataStore.data.first()[PreferenceKeys.TEXT_COLOR] ?: ""
+    override suspend fun getTextColorSnapshot(): String? =
+        dataStore.data.first()[PreferenceKeys.TEXT_COLOR]
 
     /**
      * Returns a Flow for the icon visibility preference.
@@ -92,8 +92,8 @@ class GreetingsDataSourceImpl @Inject constructor(
     /**
      * Returns the current value of the icon visibility preference.
      */
-    override suspend fun isIconVisibleSnapshot(): Boolean =
-        dataStore.data.first()[PreferenceKeys.ICON_VISIBILITY] ?: true
+    override suspend fun isIconVisibleSnapshot(): Boolean? =
+        dataStore.data.first()[PreferenceKeys.ICON_VISIBILITY]
 
     /**
      * Returns a Flow for all the preferences.

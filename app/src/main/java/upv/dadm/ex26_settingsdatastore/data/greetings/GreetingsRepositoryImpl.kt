@@ -71,19 +71,19 @@ class GreetingsRepositoryImpl @Inject constructor(
     /**
      * Returns the current value of the user name preference.
      */
-    override suspend fun getUsernameSnapshot(): String =
+    override suspend fun getUsernameSnapshot(): String? =
         greetingsDataSource.getUsernameSnapshot()
 
     /**
      * Returns the current value of the text color preference.
      */
-    override suspend fun getTextColorSnapshot(): String =
+    override suspend fun getTextColorSnapshot(): String? =
         greetingsDataSource.getTextColorSnapshot()
 
     /**
      * Returns the current value of the icon visibility preference.
      */
-    override suspend fun isIconVisibleSnapshot(): Boolean =
+    override suspend fun isIconVisibleSnapshot(): Boolean? =
         greetingsDataSource.isIconVisibleSnapshot()
 
 }
