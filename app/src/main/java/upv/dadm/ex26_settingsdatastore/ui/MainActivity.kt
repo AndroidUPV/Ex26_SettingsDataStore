@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023 Universitat Politècnica de València
+ * Copyright (c) 2022-2024 Universitat Politècnica de València
  * Authors: David de Andrés and Juan Carlos Ruiz
  *          Fault-Tolerant Systems
  *          Instituto ITACA
@@ -15,6 +15,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.navigation.NavController
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity(), MenuProvider {
         super.onCreate(savedInstanceState)
         // Get the automatically generated view binding for the layout resource
         val binding = ActivityMainBinding.inflate(layoutInflater)
+        // Enable edge-to-edge display
+        enableEdgeToEdge()
         // Set the activity content to the root element of the generated view
         setContentView(binding.root)
         // Make the custom ToolBar the ActionBar
