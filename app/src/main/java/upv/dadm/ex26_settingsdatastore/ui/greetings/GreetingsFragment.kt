@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 Universitat Politècnica de València
+ * Copyright (c) 2022-2026 Universitat Politècnica de València
  * Authors: David de Andrés and Juan Carlos Ruiz
  *          Fault-Tolerant Systems
  *          Instituto ITACA
@@ -11,9 +11,9 @@
 
 package upv.dadm.ex26_settingsdatastore.ui.greetings
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -56,13 +56,11 @@ class GreetingsFragment : Fragment(R.layout.fragment_greetings) {
                         preferences.userName.ifEmpty { getString(R.string.anonymous) }
                     )
                     binding.tvGreetings.setTextColor(
-                        Color.parseColor(
-                            preferences.color.ifEmpty {
-                                getString(
-                                    R.string.default_color
-                                )
-                            }
-                        )
+                        preferences.color.ifEmpty {
+                            getString(
+                                R.string.default_color
+                            )
+                        }.toColorInt()
                     )
                     binding.ivGreetings.visibility =
                         if (preferences.isIconVisible) View.VISIBLE else View.INVISIBLE
